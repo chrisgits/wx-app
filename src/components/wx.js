@@ -1,12 +1,12 @@
 import React from 'react';
 
 const Weather = props => (
-	<div>
+	<div className="wxdata">
 		{props.city && props.country && <p>Location: {props.city} <br></br>Country: {props.country}</p>}
-		{props.temperature && props.temperature && <p>Temp: {props.temperature}</p>}
-		{props.humidity && <p>Humidty: {props.humidity}</p>}
-		{props.description && <p>Condition: {props.description}</p>}
-		{props.error && <p>Error! {props.error}</p>}
+		{props.temperature && props.temperature && <p>Temp: {props.temperature}&deg; F</p>}
+		{props.humidity && <p>Humidity: {props.humidity} &#37;</p>}
+		{props.description && <p id="cond">Condition: {props.description}</p>}
+		{props.error && <p class="error">Error! {props.error}</p>}
 	</div>
 )
 
