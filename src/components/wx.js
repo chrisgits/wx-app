@@ -1,18 +1,28 @@
 import React from 'react';
 
-class Wx extends React.Component {
-    render () {
-        return (
-            <div>
-                Location: {this.props.city}<br></br>
-                Country: {this.props.country}<br></br>
-                Temp: {this.props.temperature}<br></br>
-                Humidty: {this.props.humidity}<br></br>
-                Descr: {this.props.description}<br></br>
-                
-            </div>
-        );
-    }
-};
+const Weather = props => (
+	<div>
+		{props.city && props.country && <p>Location: {props.city} <br></br>Country: {props.country}</p>}
+		{props.temperature && props.temperature && <p>Temp: {props.temperature}</p>}
+		{props.humidity && <p>Humidty: {props.humidity}</p>}
+		{props.description && <p>Condition: {props.description}</p>}
+		{props.error && <p>Error! {props.error}</p>}
+	</div>
+)
 
-export default Wx;
+
+// class Wx extends React.Component {
+//     render () {
+//         return (
+//             <div>
+//                 {this.props.city && this.props.country && <p>Location: {this.props.city} <br></br>Country: {this.props.country}</p>}
+//                 {this.props.temperature && this.props.temperature && <p>Temp: {this.props.temperature}</p>}
+//                 {this.props.humidity && <p>Humidty: {this.props.humidity}</p>}
+//                 {this.props.description && <p>Condition: {this.props.description}</p>}
+//                 {this.props.error && <p>Error! {this.props.error}</p>}
+//             </div>
+//         );
+//     }
+// };
+
+export default Weather;
